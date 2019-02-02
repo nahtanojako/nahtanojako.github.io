@@ -1,0 +1,109 @@
+#portfolio
+  .row
+    margin: 0
+  .col-md-6
+    padding: 0
+  
+  .portfolio-item:nth-child(1)
+    +bp(md)
+      order: 1
+
+  .portfolio-item:nth-child(2)
+    +bp(md)
+      order: 2
+
+  .portfolio-item:nth-child(3)
+    +bp(md)
+      order: 4
+
+  .portfolio-item:nth-child(4)
+    +bp(md)
+      order: 3
+
+  .portfolio-item:nth-child(5)
+    +bp(md)
+      order: 5
+
+  .portfolio-item:nth-child(6)
+    +bp(md)
+      order: 6
+
+  .portfolio-item:nth-child(7)
+    +bp(md)
+      order: 8
+
+  .portfolio-item:nth-child(8)
+    +bp(md)
+      order: 7
+
+  .portfolio-item:nth-child(odd)
+    +bp(md)
+      background: $gray
+      .portfolio-content
+        +center(y)
+
+  .portfolio-item:nth-child(even)
+    z-index: -99
+
+  .portfolio-item
+    .portfolio-img
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center
+      height: 350px
+
+    .port-img-1
+      background-image: url(../img/works/vision.jpg)
+
+    .port-img-2
+      background-image: url(../img/works/salon.jpg)
+
+    .port-img-3
+      background-image: url(../img/works/navair.jpg)
+
+    .port-img-4
+      background-image: url(../img/works/mate.jpg)
+
+
+  .portfolio-content
+    position: relative
+    background: $gray
+    +bp(md)
+      text-align: left
+
+    .content-head
+      color: $gray-8
+
+    p
+      color: $gray-7
+
+    .btn-secondary
+      +bp(md)
+        margin-left: 1rem
+
+    .arrow-down
+      +center(x)
+      left: calc(50% - 1rem)
+      width: 1.5rem
+      height: 1.5rem
+      background: $gray
+      bottom: -0.75rem
+      +transform(rotate(45deg))
+
+      i
+        font-size: 2rem
+        +transform(rotate(-45deg))
+        margin-left: 5px
+        color: $gray-7
+
+      +bp(md)
+        left: calc(100% - 0.8rem)
+        +center(y)
+        +transform(rotate(-45deg))
+    
+  .portfolio-item:nth-child(3),
+  .portfolio-item:nth-child(7)
+    +bp(md)
+      .arrow-down
+        left: -0.7rem !important
+        +transform(rotate(135deg))

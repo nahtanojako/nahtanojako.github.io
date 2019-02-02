@@ -1,0 +1,63 @@
+#home
+  position: relative
+  height: calc(100vh + 50px)
+  +bp(md)
+    height: calc(100vh + 100px)
+
+
+  .container
+    +center
+  img
+    width: 40%
+    margin-bottom: 3rem
+    border: 1px solid $gray-5
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+    +bp(sm)
+      width: 30%
+    +bp(md)
+      width: 20%
+    +bp(lg)
+      width: 15%
+
+
+  h1
+    color: $primary
+    font-size: 3rem
+    line-height: 0.7
+    +bp(md)
+      font-size: 3.8rem
+  .subhead
+    font-family: $serif
+    font-size: 1.2rem
+    color: $gray-7
+
+  .btn i
+    margin-left: 0.5rem
+  
+.social-m
+  margin-bottom: 3rem
+  li
+    display: inline-block
+    padding: 0 0.2rem
+    a
+      background: $gray
+      position: relative
+      display: block
+      width: 2.2rem
+      height: 2.2rem
+      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+      &:hover
+        background: $primary
+      i
+        +center
+        +transition(fast)
+        color: $gray-6
+      &:hover i
+        color: $white
+
+  
+
+
+

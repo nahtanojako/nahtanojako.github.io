@@ -1,0 +1,53 @@
+.btn
+  display: inline-block
+  padding: 0.7rem 2.3rem
+  border: 1px solid transparent
+  text-transform: uppercase
+  font-size: 1.1rem
+  letter-spacing: 1px
+  font-family: $sans-serif
+
+.btn-secondary
+  background: $secondary
+  border: 2px solid $secondary
+  color: $white
+  position: relative
+  border-radius: 3px
+  &:before,
+  &:after
+    +pseudo
+    background: $secondary
+    -webkit-clip-path: polygon(25% 0%, 26% 0, 26% 100%, 25% 100%, 0% 50%)
+    clip-path: polygon(25% 0%, 26% 0, 26% 100%, 25% 100%, 0% 50%)
+    height: 3.2rem
+    width: 4.5rem
+    top: 0
+    +transition(fast)
+  &:before
+    left: -1.2rem
+  &:after
+    right: -1.2rem
+    +transform(rotate(180deg))
+  &:hover,
+  &:hover:before,
+  &:hover:after
+    background: $primary
+    border-color: $primary
+
+
+#portfolio,
+.awards-content,
+#contact
+  .btn-secondary
+    margin-top: 2rem
+    padding-top: 0.3rem
+    padding-bottom: 0.4rem !important
+    border-radius: 0
+    border: none
+    &:before, &:after
+      width: 3.6rem
+      height: 2.4rem
+    &:before
+      left: -0.9rem
+    &:after
+      right: -0.9rem

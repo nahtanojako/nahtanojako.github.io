@@ -1,0 +1,123 @@
+*
+  box-sizing: border-box
+
+*:before,
+*:after
+  box-sizing: border-box
+
+::selection
+  background: $primary
+  color: $white
+
+html,
+body
+  width: 100%
+  height: 100%
+
+body
+  font-family: $sans-serif
+  line-height: 1.6
+  text-align: center
+  
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 700
+  text-transform: uppercase
+
+a
+  text-decoration: none
+  color: $gray-7
+  +transition(fast)
+
+.link-dashed
+  border-bottom: 1px dashed $white
+  padding: 0 3px
+  &:hover
+    border-bottom: none
+    color: $white !important
+    background: $primary
+
+img
+  max-width: 100%
+  vertical-align: middle
+
+p
+  font-family: $serif
+
+
+// CUSTOM STYLES -------------------------------
+.bg-gray
+  background: $gray
+  border-bottom: 10px solid rgba($black, 0.5)
+
+.bg-primary
+  background: $primary
+  border-bottom: 10px solid darken($primary, 20%)
+
+.bg-secondary
+  background: $secondary
+
+.section-head
+  +flex(row, space-between, center)
+  color: $gray-9
+  text-align: left
+  .off-text
+    display: block
+    font-size: 2rem
+    color: rgba($gray-9, 0.5)
+  h2
+    font-size: 4rem
+    line-height: 0.8
+  i
+    font-size: 4rem
+
+.skills-heading,
+.portfolio-heading,
+.experience-heading
+  .section-head
+    color: $white
+    .off-text
+      color: rgba($white, 0.5)
+
+.pd-xy
+  padding: 3rem 2rem
+
+.pd-l
+  +bp(md)
+    padding-left: 10%
+  +bp(lg)
+    padding-left: 20%
+
+.pd-r
+  +bp(md)
+    padding-right: 10%
+  +bp(lg)
+    padding-right: 20%
+
+#portfolio,
+#contact
+  .section-head
+    display: inline-block
+    margin: auto
+
+#to-top
+  position: fixed
+  bottom: 1.5rem
+  right: 1.5rem
+  background: rgba($secondary, 0.5)
+  width: 2rem
+  height: 2rem
+  z-index: $top
+  border: 1px solid $white
+  +transform(rotate(45deg))
+  +transition(fast)
+  opacity: 0
+  &:hover
+    background: $primary
+  i
+    +transform(rotate(-45deg))
+    font-size: 1.5rem
+    color: $white
+    margin-left: -0.2rem
+  &.show
+    opacity: 1

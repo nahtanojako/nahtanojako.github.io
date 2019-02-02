@@ -1,0 +1,147 @@
+.main-header
+  position: fixed
+  width: 100%
+  left: 0
+  top: 0
+  padding-top: 1rem
+  z-index: $top
+  +transition(fast)
+  &.fixed
+    background: $gray
+    box-shadow: 0 3px 5px rgba($black, 0.2)
+    padding-top: 0
+  &.fixed .logo
+    +bp(md)
+      top: 0 !important
+
+  &.fixed .logo img
+    +bp(md)
+      background: $gray
+      -webkit-clip-path: polygon(50% 0%, 100% 27%, 100% 73%, 50% 100%, 0% 73%, 0% 27%)
+      clip-path: polygon(50% 0%, 100% 27%, 100% 73%, 50% 100%, 0% 73%, 0% 27%)
+      +transform(rotate(0))
+      z-index: $top
+      
+  &.fixed .nav-collapse
+    +bp(md)
+      background: $gray
+      z-index: -1
+      height: 50px
+      box-shadow: 0 3px 5px rgba($black, 0.2)
+      
+  &.fixed .nav-collapse li a
+    +bp(md)
+      padding-top: 1rem
+      padding-bottom: 0.5rem
+      
+      
+  .row
+    margin: 0
+    justify-content: space-between
+    align-items: center
+
+  .logo
+    +bp(md)
+      +center(x)
+      top: 1rem
+    img
+      width: 50px
+      +transform(rotate(-90deg))
+      +transition(fast)
+      +bp(md)
+        background: $white
+        width: 80px
+        clip-path: polygon(50% 0%, 100% 27%, 100% 73%, 50% 100%, 0% 73%, 0% 27%)
+
+  nav
+    .nav-collapse
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      +flex(column, center, center)
+      background: $gray
+      text-align: center
+      height: 100vh
+      width: 100%
+      +transform(translateX(100%))
+      +transition(fast)
+      &.show
+        +transform(translateX(0))
+        +bp(md)
+          +transform(translateY(10%))
+
+      li
+        +bp(md)
+          margin: 0 10%
+
+        &:nth-child(2)
+          +bp(md)
+
+        &:nth-child(3)
+          +bp(md)
+            margin-right: 14%
+            margin-left: 3%
+
+        &:nth-child(4)
+          +bp(md)
+            margin-left: 15%
+            margin-right: 0
+
+        a
+          text-transform: uppercase
+          font-size: 1.5rem
+          display: inline-block
+          padding: 1rem 0 0.3rem 0
+          border-bottom: 3px solid transparent
+          +bp(md)
+            font-size: 1rem
+            color: $gray-6
+
+        &.active a,
+        &:hover a
+          color: $primary
+          border-color: $primary
+
+      +bp(md)
+        +transform(translateX(0))
+        height: 60px
+        right: 0
+        +flex(row, space-between, center)
+        background: none
+
+      #btn-close
+        width: 2.1rem
+        height: 2.1rem
+        position: absolute
+        top: 1rem
+        right: 1rem
+        cursor: pointer
+        &:before,
+        &:after
+          +pseudo
+          background: $gray-7
+          width: 100%
+          height: 2px
+          +center(y)
+          border-radius: 5px
+        &:before
+          +transform(rotate(-45deg))
+        &:after
+          +transform(rotate(45deg))
+        +bp(md)
+          display: none
+
+    .nav-toggler
+      width: 2.1rem
+      height: 1.3rem
+      cursor: pointer
+      +bp(md)
+        display: none
+      .nav-toggler-icon
+        background: $gray-6
+        width: 100%
+        height: 4px
+        border-radius: 5px
+        box-shadow: 0 10px 0 $gray-6, 0 20px 0 $gray-6
